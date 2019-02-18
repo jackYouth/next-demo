@@ -10,6 +10,21 @@ const PostLink = ({ title, id }) => {
       <Link as={`/p/${id}`} href={`/post?id=${id}`}>
         <a>{title}</a>
       </Link>
+      <style jsx>{`
+        li {
+          list-style: none;
+          margin: 5px 0;
+        }
+
+        a {
+          text-decoration: none;
+          color: blue;
+        }
+
+        a:hover {
+          opacity: 0.6;
+        }
+      `}</style>
     </li>
   );
 };
@@ -24,6 +39,15 @@ const Index = ({ shows }) => {
           return <PostLink key={id} id={id} title={name} />;
         })}
       </ul>
+      <style jsx>{`
+        h1,
+        a {
+          font-family: "Arial";
+        }
+        ul {
+          padding: 0;
+        }
+      `}</style>
     </Layout>
   );
 };
